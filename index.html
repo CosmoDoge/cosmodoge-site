@@ -1,111 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CosmoDoge ($CDOGE)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #0f0f2d 0%, #030316 100%);
-      color: white;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(120deg, #0f0f2d, #1c0031);
+      color: #ffffff;
       overflow-x: hidden;
     }
     header {
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
       padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
       z-index: 1000;
+      border-bottom: 2px solid #00ffe7;
     }
     nav a {
-      margin-left: 1.5rem;
+      margin: 0 1rem;
+      color: #00ffe7;
       text-decoration: none;
-      color: #f0f0f0;
-      font-weight: bold;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
     nav a:hover {
-      color: #00ffe7;
+      color: #ff00ff;
     }
     section {
       padding: 4rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
     h1, h2 {
       color: #00ffe7;
-      text-shadow: 0 0 10px #00ffe7;
     }
-    .perrita {
-      width: 150px;
-      animation: float 3s ease-in-out infinite;
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    ul li::before {
+      content: "\2728 ";
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #111122;
-      font-size: 0.9rem;
-      color: #aaa;
+    .rocket-dog {
+      width: 100px;
+      animation: fly 5s infinite linear;
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
+    @keyframes fly {
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-10px) rotate(-2deg); }
+      100% { transform: translateY(0) rotate(0); }
+    }
+    .buy-btn {
+      display: inline-block;
+      background: #ff00ff;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 10px #ff00ff;
+      transition: transform 0.3s;
+    }
+    .buy-btn:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
   <header>
-    <div>
-      <img src="./perrita-cohete.gif" alt="CosmoDoge" class="perrita" />
-    </div>
+    <h1>🚀 CosmoDoge</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#comunidad">Comunidad</a>
+      <a href="#comprar">Comprar</a>
     </nav>
   </header>
 
   <section id="inicio">
-    <h1>Bienvenido al universo de CosmoDoge</h1>
-    <p>Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta. ¡Súbete al cohete del $CDOGE!</p>
+    <h2>Bienvenido al universo de CosmoDoge</h2>
+    <p>
+      Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta. 
+      ¡Súbete al cohete del $CDOGE!
+    </p>
   </section>
 
   <section id="tokenomics">
     <h2>Tokenomics</h2>
     <ul>
-      <li>🔹 1,000,000,000 Tokens totales</li>
-      <li>🔹 50% Liquidez bloqueada</li>
-      <li>🔹 25% Comunidad & recompensas</li>
-      <li>🔹 15% Marketing galáctico</li>
-      <li>🔹 10% Desarrollo</li>
+      <li>1,000,000,000 Tokens totales</li>
+      <li>50% Liquidez bloqueada</li>
+      <li>25% Comunidad & recompensas</li>
+      <li>15% Marketing galáctico</li>
+      <li>10% Desarrollo</li>
     </ul>
   </section>
 
   <section id="roadmap">
     <h2>Roadmap</h2>
-    <p>🚀 Lanzamiento en PancakeSwap ✅<br />
-       🌌 Publicación en plataformas ✅<br />
-       👨‍🚀 Miniweb interactiva ✅<br />
-       🐾 NFT de CosmoDoge - Fase Beta 🔜<br />
-       🛰️ Expansión intergaláctica 🔜
-    </p>
+    <ul>
+      <li>✅ Lanzamiento en PancakeSwap</li>
+      <li>✅ Publicación en plataformas</li>
+      <li>🌌 Miniweb interactiva</li>
+      <li>🧙 NFT de CosmoDoge - Fase Beta</li>
+      <li>🌌 Expansión intergaláctica</li>
+    </ul>
   </section>
 
   <section id="comunidad">
-    <h2>Únete a la Comunidad</h2>
-    <p>🐕‍🦺 Telegram, Twitter y TikTok para ver a CosmoDoge en acción.<br />
-       💬 Comparte memes, haz staking y explora el metaverso de la perrita más leal de la galaxia.</p>
+    <h2>Comunidad</h2>
+    <p>
+      Únete a nuestra comunidad intergaláctica y conviértete en un verdadero cosmonauta del $CDOGE.
+    </p>
   </section>
 
-  <footer>
-    🚀 CosmoDoge ($CDOGE) - Un token hecho con amor y visión cósmica 🌌<br />
-    &copy; 2025 CosmoDoge Project
-  </footer>
+  <section id="comprar">
+    <h2>Comprar $CDOGE</h2>
+    <p>
+      Adquiere tus tokens en PancakeSwap y viaja al espacio con nosotros.
+    </p>
+    <a 
+      class="buy-btn" 
+      href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" 
+      target="_blank"
+    >
+      Comprar en PancakeSwap 🚀
+    </a>
+  </section>
+
+  <img class="rocket-dog" src="https://i.imgur.com/O9bEHpe.gif" alt="Perrita espacial">
 </body>
 </html>
