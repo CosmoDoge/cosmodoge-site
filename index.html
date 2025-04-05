@@ -3,161 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CosmoDoge 🚀 Token Galáctico</title>
+  <title>CosmoDoge 🚀</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0a0a2a, #1a1a3d);
+      background-color: #0b0c2a;
       color: white;
       text-align: center;
     }
-    header, .section, footer {
-      padding: 40px 20px;
-    }
-    header img, .img-section img {
-      width: 160px;
-      margin: 10px auto;
-      display: block;
+    header {
+      padding: 40px 20px 20px;
     }
     h1 {
       font-size: 2.5em;
-      margin: 0.3em 0;
     }
     p {
       font-size: 1.2em;
-      max-width: 800px;
-      margin: 10px auto;
+      margin: 0 20px 20px;
     }
-    .button {
-      background: #00ffe0;
-      color: #0a0a2a;
+    .galeria img {
+      width: 80px;
+      margin: 10px;
+    }
+    .boton {
+      display: inline-block;
       padding: 15px 30px;
-      margin-top: 20px;
+      margin: 20px;
+      font-size: 1.1em;
       font-weight: bold;
+      color: #fff;
+      background-color: #00d084;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
     }
-    .button:hover {
-      background: #00cccc;
-    }
-    a {
-      color: #00ffe0;
-      text-decoration: none;
+    .advertencia {
+      margin: 40px auto;
+      padding: 15px 25px;
+      width: 90%;
+      max-width: 700px;
+      background-color: #1c1f2e;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      font-size: 0.95em;
     }
     footer {
-      background-color: #1b1b3a;
-      font-size: 0.9em;
-      color: #ccc;
+      margin: 50px 20px 100px;
     }
-    .img-section {
-      margin: 30px 0;
-    }
-    .img-section img {
-      width: 100px;
-    }
-    .warning {
-      background: rgba(255, 255, 0, 0.1);
-      border: 1px solid #ffeb3b;
-      color: #fff176;
-      padding: 15px;
-      margin: 30px auto 0;
-      max-width: 700px;
-      border-radius: 10px;
-      font-size: 1em;
-    }
-
-    /* Botones flotantes */
-    .floating-buttons {
+    .social-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 999;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    .floating-buttons a {
-      background: #00ffe0;
-      color: #0a0a2a;
-      font-size: 24px;
-      width: 48px;
-      height: 48px;
+    .social-float a {
+      background-color: #00d084;
+      border-radius: 50%;
+      padding: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
+      width: 50px;
+      height: 50px;
       text-decoration: none;
-      box-shadow: 0 0 12px rgba(0,255,255,0.4);
-      transition: background 0.3s;
     }
-    .floating-buttons a:hover {
-      background: #00cccc;
+    .social-float img {
+      width: 24px;
+      height: 24px;
+    }
+    .seccion {
+      margin: 50px 20px 30px;
+    }
+    .seccion h3 {
+      margin-bottom: 10px;
+      font-size: 1.4em;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="assets/perrita.png" alt="CosmoDoge" />
+    <img src="cohete.png" alt="Cohete CosmoDoge" width="100" />
     <h1>CosmoDoge 🚀</h1>
     <p>El token galáctico con utilidad real, comunidad estelar y visión interplanetaria.</p>
   </header>
 
-  <div class="img-section">
-    <img src="assets/cohete.png" alt="Cohete" />
-    <img src="assets/planeta1.png" alt="Planeta 1" />
-    <img src="assets/planeta2.png" alt="Planeta 2" />
-    <img src="assets/planeta3.png" alt="Planeta 3" />
-    <img src="assets/fondo-espacial.png" alt="Fondo Espacial" />
+  <div class="galeria">
+    <img src="planeta1.png" alt="Planeta 1" />
+    <img src="planeta2.png" alt="Planeta 2" />
+    <img src="planeta3.png" alt="Planeta 3" />
+    <img src="fondo.png" alt="Fondo Espacial" />
   </div>
 
-  <div class="section">
-    <h2>🌐 Sitio oficial</h2>
-    <p><a href="https://cosmodoge.github.io/cosmodoge-site" target="_blank">https://cosmodoge.github.io/cosmodoge-site</a></p>
+  <section class="seccion">
+    <h3>🌐 Sitio oficial</h3>
+    <a class="boton" href="https://cosmodoge.github.io/cosmodoge-site" target="_blank">Visitar sitio</a>
+  </section>
 
-    <h2>💸 Compra $CDOGE</h2>
-    <p><a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank">
-      Comprar en PancakeSwap
-    </a></p>
-    <a class="button" href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank">Comprar Ahora</a>
+  <section class="seccion">
+    <h3>🪙 Compra $CDOGE</h3>
+    <p><a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank">Comprar en PancakeSwap</a></p>
+    <a class="boton" href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank">Comprar Ahora</a>
+  </section>
 
-    <div class="warning">
-      ⚠️ Si no ves el token en PancakeSwap, selecciona la red BNB y pega el contrato:<br>
-      <strong>0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1</strong>
-    </div>
+  <div class="advertencia">
+    ⚠️ Si no ves el token en PancakeSwap, selecciona la red BNB y pega el contrato:  
+    <br><strong>0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1</strong>
   </div>
 
-  <div class="section">
-    <h2>📱 Redes Oficiales</h2>
+  <section class="seccion">
+    <h3>📡 Redes Oficiales</h3>
     <p>Telegram: <a href="https://t.me/CosmoDoge_Oficial" target="_blank">@CosmoDoge_Oficial</a></p>
     <p>X (Twitter): <a href="https://x.com/CosmoDogeBSC" target="_blank">@CosmoDogeBSC</a></p>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>🪐 Próximamente</h2>
-    <p>🎮 Juego NFT interplanetario</p>
-    <p>🌌 Misiones, recompensas y comunidad cósmica</p>
-    <p>🚀 Colección de NFTs exclusiva de CosmoDoge</p>
-  </div>
-
-  <div class="section">
-    <h2>📩 Formulario de Contacto</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd5VV-kjXtF8ItxtMX7IXLVU1Dh2kgdpkkVDyGZ2eh0gVfIow/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-  </div>
+  <section class="seccion">
+    <h3>🧪 Próximamente</h3>
+    <p>👾 Juego NFT interplanetario</p>
+    <p>🪐 Misiones, recompensas y comunidad cósmica</p>
+    <p>🎨 Colección de NFTs exclusiva de CosmoDoge</p>
+  </section>
 
   <footer>
-    <p>© 2025 CosmoDoge — Proyecto impulsado por la comunidad 🚀</p>
+    <p>© 2025 CosmoDoge. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botones flotantes de redes -->
-  <div class="floating-buttons">
-    <a href="https://t.me/CosmoDoge_Oficial" target="_blank" title="Telegram">💬</a>
-    <a href="https://x.com/CosmoDogeBSC" target="_blank" title="Twitter">🐦</a>
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank" title="Comprar CDOGE">🛒</a>
+  <div class="social-float">
+    <a href="https://t.me/CosmoDoge_Oficial" target="_blank" title="Telegram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111644.png" alt="Telegram">
+    </a>
+    <a href="https://x.com/CosmoDogeBSC" target="_blank" title="X">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="Twitter / X">
+    </a>
   </div>
 
 </body>
