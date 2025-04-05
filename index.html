@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CosmoDoge ($CDOGE)</title>
   <style>
     body {
@@ -90,6 +90,35 @@
       font-size: 0.9rem;
       margin-top: 5rem;
     }
+
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .floating-buttons a {
+      background-color: #00ffff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-size: 1.5rem;
+      box-shadow: 0 0 10px #00ffff70;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.15);
+    }
   </style>
 </head>
 <body>
@@ -106,20 +135,17 @@
     </nav>
   </header>
 
-  <!-- Planetas y perrita -->
   <img src="planeta1.png" class="floating" style="position:absolute;top:0;left:0;width:260px;">
   <img src="planeta2.png" class="floating" style="position:absolute;top:50px;right:40px;width:120px;">
   <img src="planeta3.png" class="floating" style="position:absolute;bottom:10px;right:60px;width:240px;">
   <img src="cosmodoge-float.png" class="floating" style="position:absolute;bottom:30px;right:10px;width:80px;">
   <img src="cohete-cosmodoge.png" class="floating" style="position:absolute;top:50%;left:-60px;width:120px;">
 
-  <!-- Sección Inicio -->
   <section id="inicio">
     <h2>Bienvenido al universo de CosmoDoge</h2>
     <p>Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta. ¡Súbete al cohete del $CDOGE!</p>
   </section>
 
-  <!-- Tokenomics -->
   <section id="tokenomics">
     <h2>Tokenomics</h2>
     <ul>
@@ -131,7 +157,6 @@
     </ul>
   </section>
 
-  <!-- Roadmap -->
   <section id="roadmap">
     <h2>Roadmap</h2>
     <ul>
@@ -143,17 +168,16 @@
     </ul>
   </section>
 
-  <!-- Comunidad -->
   <section id="comunidad">
     <h2>Comunidad</h2>
-    <p><em>Síguenos muy pronto en nuestras redes sociales para unirte a la aventura espacial. 🛰️</em></p>
+    <p>Únete a nuestras redes y forma parte del viaje cósmico.</p>
+    <p><strong>Telegram:</strong> <a href="https://t.me/CosmoDoge_Oficial" target="_blank">@CosmoDoge_Oficial</a></p>
+    <p><strong>X (Twitter):</strong> <a href="https://x.com/CosmoDogeBSC" target="_blank">@CosmoDogeBSC</a></p>
   </section>
 
-  <!-- Comprar -->
   <section id="comprar">
     <h2>¿Listo para despegar?</h2>
-
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752a4D09b502e3e9Bae44dcD1" target="_blank">
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1" target="_blank">
       <button class="button-primary">Comprar $CDOGE en PancakeSwap 🚀</button>
     </a>
 
@@ -161,7 +185,7 @@
       ⚠️ Al entrar a PancakeSwap, selecciona <strong>BNB</strong> como divisa principal y busca el token como <strong>$CDOGE</strong>.<br><br>
       Si no aparece automáticamente, copia y pega este contrato:
       <br><br>
-      <code id="contract">0x6dEd7a840077bB7752a4D09b502e3e9Bae44dcD1</code>
+      <code id="contract">0x6dEd7a840077bB7752A4d09b502e3e9bAE44dcD1</code>
       <br><br>
       <button onclick="copiarContrato()" style="padding: 0.5rem 1rem; background-color: #00ffff; color: black; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
         📋 Copiar contrato
@@ -169,6 +193,21 @@
       <span id="copiado" style="margin-left: 10px; color: lime; display: none;">¡Copiado!</span>
     </div>
   </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYmkAxhZ0Qm7ACbk5bqVRjrX_D1dXv4Dn1rZULA1uwP8DNag/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 CosmoDoge. Todos los derechos galácticos reservados. 🚀✨
+  </footer>
+
+  <!-- Botones flotantes de redes -->
+  <div class="floating-buttons">
+    <a href="https://t.me/CosmoDoge_Oficial" target="_blank" title="Telegram">💬</a>
+    <a href="https://x.com/CosmoDogeBSC" target="_blank" title="X (Twitter)">🐦</a>
+  </div>
 
   <script>
     function copiarContrato() {
@@ -181,14 +220,5 @@
     }
   </script>
 
-  <!-- Formulario de contacto -->
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYmkAxhZ0Qm7ACbk5bqVRjrX_D1dXv4Dn1rZULA1uwP8DNag/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-  </section>
-
-  <footer>
-    &copy; 2025 CosmoDoge. Todos los derechos galácticos reservados. 🚀✨
-  </footer>
 </body>
-</html>
+</html
