@@ -8,13 +8,14 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('estrellas.png') repeat, radial-gradient(circle at center, #0f0f2d, #030316 100%);
+      background: url('fondo-cosmodoge.png') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       overflow-x: hidden;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: #000000dd;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -22,94 +23,111 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 2px solid #00fff7;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      color: #00fff7;
-      font-weight: bold;
+      border-bottom: 2px solid cyan;
     }
 
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
-      color: #00fff7;
+      color: #00ffee;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: #ff00fc;
     }
 
     section {
       padding: 4rem 2rem;
       max-width: 900px;
       margin: auto;
-      position: relative;
     }
 
-    h1, h2, h3 {
-      color: #00fff7;
+    h1, h2 {
+      color: #00ffee;
       text-align: center;
     }
 
-    .btn-comprar {
-      display: block;
-      margin: 2rem auto;
-      background-color: #00fff7;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .button-compra {
+      background-color: #00ffee;
       color: #000;
+      font-weight: bold;
       padding: 1rem 2rem;
-      font-size: 1.1rem;
       border: none;
       border-radius: 10px;
+      font-size: 1.1rem;
       cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      text-align: center;
-      max-width: 400px;
+      display: block;
+      margin: 2rem auto;
+      transition: transform 0.2s ease;
     }
 
-    .espacial {
-      animation: flotar 3s ease-in-out infinite;
+    .button-compra:hover {
+      transform: scale(1.05);
     }
 
-    @keyframes flotar {
-      0%, 100% { transform: translateY(0); }
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
       50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
     }
 
-    .imagen-planeta {
+    img {
+      max-width: 100px;
+    }
+
+    .perrita {
       position: absolute;
-      z-index: 0;
+      bottom: 20px;
+      right: 20px;
+      width: 90px;
+      z-index: 10;
     }
 
-    .imagen-planeta img {
-      max-width: 200px;
-    }
-
-    .astrodoge {
+    .planeta {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
-      width: 100px;
-      animation: flotar 4s ease-in-out infinite;
+      z-index: 1;
     }
 
-    iframe {
+    .planeta1 { top: 0; left: 0; width: 200px; }
+    .planeta2 { top: 0; right: 0; width: 100px; }
+    .planeta3 { bottom: 0; right: 0; width: 200px; }
+
+    .formulario iframe {
       width: 100%;
-      height: 650px;
+      height: 500px;
       border: none;
       border-radius: 10px;
       margin-top: 2rem;
     }
+
+    footer {
+      background: #000000dd;
+      padding: 1rem;
+      color: #888;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 5rem;
+    }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">🚀 CosmoDoge</div>
+    <h1>🚀 CosmoDoge</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#tokenomics">Tokenomics</a>
@@ -120,9 +138,15 @@
     </nav>
   </header>
 
+  <img src="planeta1.png" class="planeta planeta1 floating" />
+  <img src="planeta2.png" class="planeta planeta2 floating" />
+  <img src="planeta3.png" class="planeta planeta3 floating" />
+  <img src="cosmodoge-float.png" class="perrita floating" />
+  <img src="cohete-cosmodoge.png" class="floating" style="position:absolute; top:50%; left:10%; width:80px;" />
+
   <section id="inicio">
-    <h1>Bienvenido al universo de CosmoDoge</h1>
-    <p style="text-align:center;">Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta.<br>¡Súbete al cohete del $CDOGE!</p>
+    <h2>Bienvenido al universo de CosmoDoge</h2>
+    <p>Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta. ¡Súbete al cohete del $CDOGE!</p>
   </section>
 
   <section id="tokenomics">
@@ -141,30 +165,39 @@
     <ul>
       <li>✅ Lanzamiento en PancakeSwap</li>
       <li>✅ Publicación en plataformas</li>
-      <li>🚀 Miniweb interactiva</li>
-      <li>🌌 NFT de CosmoDoge – Fase Beta</li>
-      <li>🪐 Expansión intergaláctica</li>
+      <li>📱 Miniweb interactiva</li>
+      <li>🪐 NFT de CosmoDoge — Fase Beta</li>
+      <li>🌌 Expansión intergaláctica</li>
     </ul>
   </section>
 
   <section id="comunidad">
     <h2>Comunidad</h2>
-    <p style="text-align:center;">Síguenos muy pronto en nuestras redes sociales para unirte a la aventura espacial. 🛰️🌠</p>
+    <p><i>Síguenos muy pronto en nuestras redes sociales para unirte a la aventura espacial. 🛰️</i></p>
   </section>
 
   <section id="comprar">
     <h2>¿Listo para despegar?</h2>
-    <a class="btn-comprar" href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752a4d09b502e3e9bAE44dcD1" target="_blank">Comprar $CDOGE en PancakeSwap 🚀</a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x6dEd7a840077bB7752a4D09b502e3e9Bae44dcD1" target="_blank">
+      <button class="button-compra">Comprar $CDOGE en PancakeSwap 🚀</button>
+    </a>
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p style="text-align:center;">¿Quieres colaborar o preguntar algo? Completa el formulario:</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYmkAxhZ0Qm7ACbk5bqVRjrX_D1dXv4Dn1rZULA1uwP8DNag/viewform?embedded=true" loading="lazy">Cargando…</iframe>
+    <h2>Contacto galáctico</h2>
+    <p>¿Tienes preguntas, ideas o quieres unirte a la tripulación?</p>
+    <div class="formulario">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYmkAxhZ0Qm7ACbk5bqVRjrX_D1dXv4Dn1rZULA1uwP8DNag/viewform?embedded=true">Cargando…</iframe>
+    </div>
   </section>
 
-  <!-- Personaje flotante -->
-  <img src="cosmodoge-float.png" alt="Cosmodoge" class="astrodoge" />
+  <section>
+    <h2>🌠 Próximamente</h2>
+    <p>Nos estamos preparando para lanzar el juego oficial de CosmoDoge y nuestra propia colección de NFTs 🚀. ¡La galaxia pronto será tuya!</p>
+  </section>
 
+  <footer>
+    &copy; 2025 CosmoDoge. Todos los derechos galácticos reservados.
+  </footer>
 </body>
 </html>
