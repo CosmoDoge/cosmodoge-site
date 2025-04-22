@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CosmoDoge ($CDOGE) | Futuro Espacial</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body, html {
       margin: 0;
@@ -16,6 +17,7 @@
       color: white;
       position: relative;
       z-index: 1;
+      scroll-behavior: smooth;
     }
     #particles-js {
       position: fixed;
@@ -78,10 +80,16 @@
       border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: pulse 2s infinite;
     }
     .button-primary:hover {
       background-color: #00e7f5;
       transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     img.floating {
       animation: float 3s ease-in-out infinite;
@@ -129,6 +137,7 @@
       margin: 0 10px;
       font-size: 2rem;
       text-decoration: none;
+      color: #00ffff;
     }
     .dex-box {
       margin-top: 2rem;
@@ -138,42 +147,59 @@
       border: 2px dashed #00ffff;
       text-align: center;
     }
-    .dex-box a {
-      color: #00ffff;
-      font-weight: bold;
-      text-decoration: underline;
+    .scroll-top {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #00ffff;
+      color: black;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffff70;
+      z-index: 99;
     }
   </style>
 </head>
 <body>
+
+<!-- Botón Scroll to Top -->
+<button onclick="topFunction()" id="scrollTopBtn" class="scroll-top">🔝</button>
 
 <div id="particles-js"></div>
 
 <header>
   <h1>🚀 CosmoDoge</h1>
   <nav>
-    <a href=\"#inicio\">Inicio</a>
-    <a href=\"#tokenomics\">Tokenomics</a>
-    <a href=\"#roadmap\">Roadmap</a>
-    <a href=\"#comunidad\">Comunidad</a>
-    <a href=\"#comprar\">Comprar</a>
-    <a href=\"#jugar\">Jugar</a>
-    <a href=\"#contacto\">Contacto</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#proyecto">Proyecto</a>
+    <a href="#comprar">Comprar</a>
+    <a href="#jugar">Jugar</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
+<!-- Texto animado de presentación -->
+<h2 id="typewriter" style="text-align: center; margin-top: 2rem;"></h2>
+
+<!-- IMÁGENES flotantes -->
 <img src="planeta1.png" class="floating" style="position:absolute;top:0;left:0;width:260px;">
 <img src="planeta2.png" class="floating" style="position:absolute;top:50px;right:40px;width:120px;">
 <img src="planeta3.png" class="floating" style="position:absolute;bottom:10px;right:60px;width:240px;">
 <img src="cosmodoge-float.png" class="floating" style="position:absolute;bottom:30px;right:10px;width:80px;">
 <img src="cohete-cosmodoge.png" class="floating" style="position:absolute;top:50%;left:-60px;width:120px;">
 
-<section id=\"inicio\">
+<section id="inicio">
   <h2>Bienvenido al universo de CosmoDoge</h2>
   <p>Una memecoin espacial con utilidad real, aventuras épicas y una comunidad leal como una perrita astronauta. ¡Súbete al cohete del $CDOGE!</p>
 </section>
 
-<section id=\"tokenomics\">
+<section id="tokenomics">
   <h2>Tokenomics</h2>
   <ul>
     <li>1,000,000,000 Tokens totales</li>
@@ -184,7 +210,7 @@
   </ul>
 </section>
 
-<section id=\"roadmap\">
+<section id="roadmap">
   <h2>Roadmap</h2>
   <ul>
     <li>✅ Lanzamiento en PancakeSwap</li>
@@ -195,13 +221,15 @@
   </ul>
 </section>
 
-<section id=\"comunidad\">
-  <h2>Comunidad</h2>
-  <p>Únete a nuestras redes y forma parte del viaje cósmico.</p>
-  <div class=\"community-icons\">
-    <a href=\"https://t.me/CosmoDoge_Oficial\" target=\"_blank\">💬</a>
-    <a href=\"https://x.com/CosmoDogeBSC\" target=\"_blank\">🐦</a>
-    <a href=\"https://www.tiktok.com/@cosmodogespacegame\" target=\"_blank\">🎥</a>
+<section id="proyecto">
+  <h2>Sobre el proyecto CosmoDoge 🚀</h2>
+  <p>CosmoDoge es más que una memecoin espacial: es el inicio de un ecosistema donde la innovación, la diversión y la comunidad se combinan para crear un universo único.</p>
+  <p>Actualmente estamos en fase de expansión y mejora continua, incorporando nuevas funciones, juegos, integraciones y alianzas estratégicas para llevar a CosmoDoge y BabyCosmo al siguiente nivel.</p>
+  <p>Únete a nuestras redes sociales para ser parte del crecimiento, recibir novedades y participar en futuras actividades exclusivas:</p>
+  <div class="community-icons">
+    <a href="https://t.me/CosmoDoge_Oficial" target="_blank">💬 Telegram</a>
+    <a href="https://x.com/CosmoDogeBSC" target="_blank">🐦 X (Twitter)</a>
+    <a href="https://www.tiktok.com/@cosmodogespacegame" target="_blank">🎥 TikTok</a>
   </div>
 </section>
 <section id="comprar">
@@ -215,7 +243,7 @@
   <!-- Botón de compra de $BCOSMO -->
   <div style="margin-top: 1rem;">
     <a href="https://pump.fun/2etLM91LBaxbQ1y3jnzQw8EXKNHAKcXJsHMJJ69opump" target="_blank">
-      <button class="button-primary" style="background-color: #7B68EE;">Comprar $BCOSMO en Pump.fun 🌌</button>
+      <button class="button-primary" style="background-color: #7B68EE; color: #fff;">Comprar $BCOSMO en Pump.fun 🌌</button>
     </a>
   </div>
 
@@ -258,6 +286,7 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
+// Partículas en el fondo
 particlesJS("particles-js", {
   "particles": {
     "number": {"value": 100, "density": {"enable": true, "value_area": 800}},
@@ -274,6 +303,19 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
+// Máquina de escribir
+const texto = "🚀 Elige tu misión...";
+let i = 0;
+function escribir() {
+  if (i < texto.length) {
+    document.getElementById("typewriter").innerHTML += texto.charAt(i);
+    i++;
+    setTimeout(escribir, 100);
+  }
+}
+window.onload = escribir;
+
+// Copiar contrato
 function copiarContrato() {
   const contrato = document.getElementById("contract").innerText;
   navigator.clipboard.writeText(contrato);
@@ -281,6 +323,21 @@ function copiarContrato() {
   setTimeout(() => {
     document.getElementById("copiado").style.display = "none";
   }, 3000);
+}
+
+// Scroll to Top
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 </script>
 
