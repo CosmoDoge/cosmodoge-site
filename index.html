@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
-  <title>CosmoDoge ($CDOGE) | Universo Épico</title>
-  <!-- Favicon desde GitHub -->
+  <title>CosmoDoge | La Manada Espacial</title>
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,14 +14,14 @@
     }
 
     body {
-      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
-      background-color: #03050b;
-      color: #f0f0ff;
+      font-family: 'Orbitron', monospace;
+      background: #03050b;
+      color: #e0e0ff;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    /* ----- CAPAS DEL UNIVERSO ----- */
+    /* CAPAS DEL UNIVERSO (con tus imágenes) */
     .universo {
       position: fixed;
       top: 0;
@@ -32,12 +32,12 @@
       overflow: hidden;
     }
 
-    .fondo-estelar {
+    .fondo-base {
       position: absolute;
       width: 100%;
       height: 100%;
       background: url('https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/fondo-cosmodoge.png') center/cover no-repeat;
-      opacity: 0.9;
+      opacity: 0.7;
     }
 
     .estrellas {
@@ -45,9 +45,9 @@
       width: 100%;
       height: 100%;
       background: url('https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/estrellas.png') repeat;
-      background-size: 400px;
-      animation: moverEstrellas 120s linear infinite;
-      opacity: 0.7;
+      background-size: 300px;
+      animation: moverEstrellas 80s linear infinite;
+      opacity: 0.9;
     }
 
     @keyframes moverEstrellas {
@@ -55,40 +55,40 @@
       to { transform: translate(200px, 200px); }
     }
 
-    /* Planetas con parallax individual */
+    /* TUS PLANETAS MEJORADOS */
     .planeta {
       position: absolute;
       pointer-events: none;
-      z-index: 1;
-      will-change: transform;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+      animation: flotarPlaneta 6s infinite alternate ease-in-out;
     }
 
-    #planeta1 { bottom: 5%; left: -80px; width: 220px; animation: flotar 8s infinite alternate; }
-    #planeta2 { top: 15%; right: -60px; width: 180px; animation: flotar 12s infinite alternate-reverse; }
-    #planeta3 { bottom: 20%; right: 15%; width: 150px; animation: flotar 10s infinite alternate; }
+    #planeta1 { bottom: 5%; left: -60px; width: 220px; animation-duration: 8s; }
+    #planeta2 { top: 15%; right: -50px; width: 180px; animation-duration: 11s; animation-direction: alternate-reverse; }
+    #planeta3 { bottom: 15%; right: 10%; width: 150px; animation-duration: 7s; }
 
-    @keyframes flotar {
+    @keyframes flotarPlaneta {
       0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-25px) rotate(5deg); }
+      100% { transform: translateY(-30px) rotate(8deg); }
     }
 
-    /* Personaje principal flotante */
-    .cosmodoge-hero {
+    /* COSMODOGE CON ESTELA */
+    .cosmodoge-principal {
       position: absolute;
       bottom: 8%;
-      left: 5%;
+      left: 3%;
       width: 200px;
-      z-index: 2;
-      filter: drop-shadow(0 0 15px rgba(0,255,255,0.6));
-      animation: flotarHero 4s infinite ease-in-out;
+      z-index: 3;
+      filter: drop-shadow(0 0 15px cyan);
+      animation: volarCosmo 3s infinite alternate;
     }
 
-    @keyframes flotarHero {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-20px); }
+    @keyframes volarCosmo {
+      0% { transform: translateX(0px) translateY(0px); }
+      100% { transform: translateX(15px) translateY(-15px); }
     }
 
-    /* Cohete animado */
+    /* COHETE REACTIVO */
     .cohete {
       position: fixed;
       bottom: 30px;
@@ -96,142 +96,402 @@
       width: 70px;
       z-index: 99;
       cursor: pointer;
-      transition: transform 0.3s ease;
-      animation: coheteListo 2s infinite;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation: vibrarCohete 2s infinite;
     }
 
     .cohete:hover {
-      transform: scale(1.1) translateX(-10px) translateY(-10px);
+      transform: scale(1.2) translateX(-20px) translateY(-20px);
+      filter: drop-shadow(0 0 20px orange);
     }
 
-    @keyframes coheteListo {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0px); }
+    @keyframes vibrarCohete {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
     }
 
-    /* Contenido principal sobre el universo */
-    header, section, footer {
+    /* CONTENIDO PRINCIPAL */
+    .content {
       position: relative;
       z-index: 10;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      margin: 20px auto;
+      max-width: 1300px;
+      transition: all 0.3s;
     }
 
-    /* Resto de estilos (igual que antes pero más épico) */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       flex-wrap: wrap;
       border-bottom: 2px solid cyan;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(45deg, cyan, magenta);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     nav a {
       color: cyan;
       margin: 0 1rem;
       text-decoration: none;
+      transition: 0.3s;
       font-weight: bold;
     }
 
-    .button-primary {
-      background: linear-gradient(95deg, cyan, #3a86ff);
-      border: none;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
+    nav a:hover {
+      color: magenta;
+      text-shadow: 0 0 8px magenta;
     }
 
-    .card {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
+    section {
+      padding: 3rem 2rem;
+      margin: 2rem;
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 30px;
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      transition: 0.4s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, white, cyan);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .card-stats {
+      background: rgba(0, 0, 0, 0.7);
       padding: 1.5rem;
-      margin: 1rem auto;
+      border-radius: 20px;
+      text-align: center;
       border: 1px solid cyan;
     }
 
-    /* responsive */
+    .button-cosmic {
+      background: linear-gradient(45deg, cyan, magenta);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Orbitron', monospace;
+      margin: 0.5rem;
+    }
+
+    .button-cosmic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px cyan;
+    }
+
+    /* Preview del juego */
+    .game-preview {
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid cyan;
+      position: relative;
+    }
+
+    .game-preview iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .game-preview::before {
+      content: '🎮 JUEGO ACTIVO 🎮';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: cyan;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 20;
+    }
+
+    /* Timeline visual */
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .timeline-item {
+      flex: 1;
+      background: rgba(0,0,0,0.6);
+      padding: 1rem;
+      border-radius: 15px;
+      text-align: center;
+      border-left: 4px solid cyan;
+    }
+
+    /* Alerta flotante */
+    .alerta-compra {
+      position: fixed;
+      bottom: 100px;
+      left: 20px;
+      background: rgba(0,0,0,0.9);
+      border-left: 4px solid cyan;
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 100;
+      font-size: 0.8rem;
+      animation: aparecerAlerta 0.5s;
+    }
+
+    @keyframes aparecerAlerta {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.7);
+    }
+
     @media (max-width: 768px) {
+      section { margin: 1rem; padding: 1.5rem; }
       .planeta { width: 100px; }
-      .cosmodoge-hero { width: 120px; }
+      .cosmodoge-principal { width: 100px; }
     }
   </style>
 </head>
 <body>
 
-<!-- CAPAS DEL UNIVERSO -->
 <div class="universo">
-  <div class="fondo-estelar"></div>
+  <div class="fondo-base"></div>
   <div class="estrellas"></div>
-  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta1.png" id="planeta1" class="planeta" alt="Planeta 1">
-  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta2.png" id="planeta2" class="planeta" alt="Planeta 2">
-  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta3.png" id="planeta3" class="planeta" alt="Planeta 3">
-  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/cosmodoge-float.png" class="cosmodoge-hero" alt="CosmoDoge">
+  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta1.png" id="planeta1" class="planeta" alt="Planeta">
+  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta2.png" id="planeta2" class="planeta" alt="Planeta">
+  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/planeta3.png" id="planeta3" class="planeta" alt="Planeta">
+  <img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/cosmodoge-float.png" class="cosmodoge-principal" alt="CosmoDoge">
 </div>
 
-<!-- COHETE INTERACTIVO -->
-<img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/cohete-cosmodoge.png" class="cohete" alt="Cohete" id="coheteBtn">
+<img src="https://raw.githubusercontent.com/CosmoDoge/cosmodoge-site/main/cohete-cosmodoge.png" class="cohete" id="coheteAnimado" alt="Cohete">
 
-<!-- CONTENIDO PRINCIPAL (igual que tu estructura pero más limpia) -->
-<header>
-  <h1>🚀 CosmoDoge</h1>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#comprar">Comprar</a>
-    <a href="#jugar">Jugar</a>
-  </nav>
-  <div class="lang-selector">...</div> <!-- Aquí pones tu selector de idioma -->
-</header>
+<div class="content">
+  <header>
+    <div class="logo">🐕‍🚀 COSMODOGE</div>
+    <nav>
+      <a href="#inicio">INICIO</a>
+      <a href="#tokenomics">TOKENOMICS</a>
+      <a href="#roadmap">ROADMAP</a>
+      <a href="#comprar">COMPRAR</a>
+      <a href="#juego">JUEGO</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
 
-<section id="inicio" class="card" style="text-align:center; margin-top: 100px;">
-  <h2>🐕‍🚀 Bienvenido al Universo Épico de CosmoDoge</h2>
-  <p>La memecoin que despegó más allá de la luna. Viaja, juega y conquista la galaxia con $CDOGE y $BCOSMO.</p>
-  <a href="#comprar"><button class="button-primary">Comprar Ahora 🚀</button></a>
-</section>
+  <section id="inicio">
+    <h2>🐕‍🚀 LA MANADA QUE LLEGÓ A LAS ESTRELLAS</h2>
+    <div class="grid-2col">
+      <div class="card-stats">
+        <h3>💰 Precio $CDOGE</h3>
+        <p style="font-size: 2rem;" id="precioToken">$0.00000421</p>
+        <small>↑ +15% últimas 24h</small>
+      </div>
+      <div class="card-stats">
+        <h3>👥 Holders</h3>
+        <p style="font-size: 2rem;" id="holderCount">12,345</p>
+        <small>🌕 Nuevos cada día</small>
+      </div>
+    </div>
+    <button class="button-cosmic" onclick="document.getElementById('comprar').scrollIntoView({behavior: 'smooth'})">🛸 COMPRAR AHORA</button>
+    <button class="button-cosmic" onclick="simularConectarWallet()">🔌 Conectar Wallet</button>
+  </section>
 
-<!-- SECCIÓN COMPRAR CON TUS TOKENS -->
-<section id="comprar" class="card">
-  <h2>🛸 Compra tus Tokens</h2>
-  <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A" target="_blank">
-      <button class="button-primary">$CDOGE en PancakeSwap</button>
-    </a>
-    <a href="https://pump.fun/2etLM91LBaxbQ1y3jnzQw8EXKNHAKcXJsHMJJ69opump" target="_blank">
-      <button class="button-primary">$BCOSMO en Pump.fun</button>
-    </a>
-  </div>
-  <p><strong>Contrato $CDOGE:</strong> <code>0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A</code></p>
-  <button onclick="navigator.clipboard.writeText('0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A')">Copiar dirección</button>
-</section>
+  <section id="tokenomics">
+    <h2>📊 TOKENOMICS</h2>
+    <div class="grid-2col">
+      <div class="card-stats">
+        <h3>$CDOGE</h3>
+        <p>Supply: 1,000,000,000</p>
+        <p>✅ 0% impuestos</p>
+        <p>🔥 Liquidez quemada</p>
+        <p>🔒 Contrato renunciado</p>
+      </div>
+      <div class="card-stats">
+        <h3>$BCOSMO</h3>
+        <p>Token complementario</p>
+        <p>🎮 Utilidad en juego</p>
+        <p>⚡ Pump.fun</p>
+        <p>🪙 Recompensas diarias</p>
+      </div>
+    </div>
+  </section>
 
-<!-- SECCIÓN JUEGO -->
-<section id="jugar" class="card">
-  <h2>🎮 Juego Espacial</h2>
-  <p>¡Pilotea a CosmoDodge, esquiva asteroides y gana cripto!</p>
-  <a href="https://juego.cosmodoge.space" target="_blank"><button class="button-primary">Jugar Ahora</button></a>
-</section>
+  <section id="roadmap">
+    <h2>🗺️ HOJA DE RUTA INTERACTIVA</h2>
+    <div class="timeline">
+      <div class="timeline-item">✅ Fase 1: Lanzamiento</div>
+      <div class="timeline-item">✅ Fase 2: Comunidad +1000</div>
+      <div class="timeline-item">🚧 Fase 3: Juego Beta</div>
+      <div class="timeline-item">🛸 Fase 4: NFT + Staking</div>
+      <div class="timeline-item">🌌 Fase 5: Metaverso</div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 CosmoDoge — El ladrido que se escucha en todo el cosmos.
-</footer>
+  <section id="comprar">
+    <h2>🛸 COMPRA $CDOGE Y $BCOSMO</h2>
+    <div style="text-align: center;">
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A" target="_blank">
+        <button class="button-cosmic">🚀 COMPRAR $CDOGE (PCS)</button>
+      </a>
+      <a href="https://pump.fun/2etLM91LBaxbQ1y3jnzQw8EXKNHAKcXJsHMJJ69opump" target="_blank">
+        <button class="button-cosmic">🌌 COMPRAR $BCOSMO (PUMP)</button>
+      </a>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>📜 Contrato $CDOGE:</p>
+      <code style="background: #000; padding: 0.5rem; border-radius: 10px;">0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A</code>
+      <button onclick="copyContract()" style="margin-left: 1rem;">📋 Copiar</button>
+    </div>
+  </section>
+
+  <section id="juego">
+    <h2>🎮 VISTA PREVIA DEL JUEGO</h2>
+    <div class="game-preview">
+      <iframe src="https://juego.cosmodoge.space" loading="lazy"></iframe>
+    </div>
+    <div style="text-align: center; margin-top: 1rem;">
+      <a href="https://juego.cosmodoge.space" target="_blank">
+        <button class="button-cosmic">✨ ABRIR A PANTALLA COMPLETA ✨</button>
+      </a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>❓ PREGUNTAS FRECUENTES</h2>
+    <div class="grid-2col">
+      <div class="card-stats">
+        <h3>¿Cómo comprar?</h3>
+        <p>1. Conecta tu wallet (MetaMask).<br>2. Compra BNB en Binance.<br>3. Swap en PancakeSwap con el contrato oficial.</p>
+      </div>
+      <div class="card-stats">
+        <h3>¿Es seguro?</h3>
+        <p>✅ Liquidez bloqueada por 2 años.<br>✅ Contrato auditado internamente.<br>✅ Team doxeado (próximamente).</p>
+      </div>
+      <div class="card-stats">
+        <h3>¿Cuándo el juego?</h3>
+        <p>Beta abierta ahora mismo. Versión completa Q3 2025 con recompensas en $BCOSMO.</p>
+      </div>
+      <div class="card-stats">
+        <h3>¿Utilidad real?</h3>
+        <p>Gobernanza, staking, descuentos en NFTs y acceso a torneos exclusivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 CosmoDoge - La revolución canina interestelar<br>
+    <small>⚠️ Este proyecto es una memecoin con fines de entretenimiento. Invierte con responsabilidad.</small>
+  </footer>
+</div>
 
 <script>
-  // Efecto parallax al hacer scroll (planetas se mueven)
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    document.getElementById('planeta1').style.transform = `translateX(${scrolled * 0.1}px)`;
-    document.getElementById('planeta2').style.transform = `translateX(${scrolled * -0.05}px)`;
-    document.getElementById('planeta3').style.transform = `translateY(${scrolled * 0.08}px)`;
-  });
-
+  // ========== FUNCIONES INTERACTIVAS ==========
+  
+  // Copiar contrato
+  function copyContract() {
+    const contract = "0x5dE25281305992d3552a45A3D8ccA7BdfB4AcD3A";
+    navigator.clipboard.writeText(contract);
+    mostrarAlerta("📋 Contrato copiado al portapapeles");
+  }
+  
+  // Simular conectar wallet
+  function simularConectarWallet() {
+    mostrarAlerta("🔌 Conexión simulada (próximamente integración real con Web3)");
+  }
+  
+  // Mostrar alertas temporales
+  function mostrarAlerta(mensaje) {
+    const alerta = document.createElement('div');
+    alerta.className = 'alerta-compra';
+    alerta.innerHTML = mensaje;
+    document.body.appendChild(alerta);
+    setTimeout(() => alerta.remove(), 4000);
+  }
+  
+  // Simular compras recientes (efecto FOMO)
+  const nombresCompradores = ["CosmoWhale", "MoonDoge", "StarWalker", "GalacticShiba", "AstroPuppy"];
+  setInterval(() => {
+    const comprador = nombresCompradores[Math.floor(Math.random() * nombresCompradores.length)];
+    const cantidad = (Math.random() * 10 + 0.5).toFixed(2);
+    mostrarAlerta(`🟢 ${comprador} compró ${cantidad} BNB en $CDOGE hace 2 segundos`);
+  }, 15000);
+  
+  // Simular precio y holders
+  let precioActual = 0.00000421;
+  let holders = 12345;
+  setInterval(() => {
+    // Variación aleatoria del precio
+    const cambio = (Math.random() - 0.5) * 0.0000005;
+    precioActual = Math.max(0.000001, precioActual + cambio);
+    document.getElementById('precioToken').innerText = `$${precioActual.toFixed(8)}`;
+    
+    // Crecimiento de holders
+    holders += Math.floor(Math.random() * 5);
+    document.getElementById('holderCount').innerText = holders.toLocaleString();
+  }, 5000);
+  
   // Cohete que lleva a comprar
-  document.getElementById('coheteBtn').addEventListener('click', () => {
+  document.getElementById('coheteAnimado').addEventListener('click', () => {
     document.getElementById('comprar').scrollIntoView({ behavior: 'smooth' });
+    mostrarAlerta("🚀 ¡Despegando hacia la compra de tokens!");
+  });
+  
+  // Efecto parallax con el mouse en los planetas
+  document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    document.getElementById('planeta1').style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+    document.getElementById('planeta2').style.transform = `translate(${-mouseX * 15}px, ${-mouseY * 15}px)`;
+    document.getElementById('planeta3').style.transform = `translate(${mouseX * 10}px, ${-mouseY * 10}px)`;
+  });
+  
+  // Smooth scroll para enlaces del nav
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+    });
   });
 </script>
 
